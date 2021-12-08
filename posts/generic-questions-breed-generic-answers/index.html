@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Generic questions breed generic answers - ivychapel.ink</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Generic questions breed generic answers" />
+<meta property="og:description" content="&ldquo;Should I use TLS for HIPAA compliance?” “Is self-signed certificate OK for mutual TLS authentication?” “Can I work without a security policy but with awesome security engineers?” “Can I have PEP and PDP in the same component of my application?”  Mmm, maybe… Hell yeah! Sure you can! Oh, no! Avoid at all costs!
+I’m tired, can I go now?
+Without a certain level of precision and context in communication, there are very few mutually understandable reference points between people who build and people who protect." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ivychapel.ink/posts/generic-questions-breed-generic-answers/" />
+<meta property="article:published_time" content="2021-06-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-06-03T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Generic questions breed generic answers"/>
+<meta name="twitter:description" content="&ldquo;Should I use TLS for HIPAA compliance?” “Is self-signed certificate OK for mutual TLS authentication?” “Can I work without a security policy but with awesome security engineers?” “Can I have PEP and PDP in the same component of my application?”  Mmm, maybe… Hell yeah! Sure you can! Oh, no! Avoid at all costs!
+I’m tired, can I go now?
+Without a certain level of precision and context in communication, there are very few mutually understandable reference points between people who build and people who protect."/>
+<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script type="text/javascript">
+	  var _paq = window._paq || [];
+	   
+	  _paq.push(['trackPageView']);
+	  _paq.push(['enableLinkTracking']);
+	  (function() {
+	    var u="//pwk.cossacklabs.com/";
+	    _paq.push(['setTrackerUrl', u+'matomo.php']);
+	    _paq.push(['setSiteId', '6']);
+	    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+	    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+	  })();
+	</script>
+	
+	<script src="/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">ivychapel.ink</h1>
+	<div class="site-description"><ul class="flat">
+			
+			<li>
+				<strong style="font-weight:300">~/</strong><a href="/posts">posts</a>
+			</li>
+			
+			<li>
+				<strong style="font-weight:300">~/</strong><a href="/tags">topics</a>
+			</li>
+			
+			<li>
+				<strong style="font-weight:300">~/</strong><a href="/about">about</a>
+			</li>
+			
+		</ul>
+		<nav class="nav social">
+			<ul class="flat"><a href="https://twitter.com/9gunpi" title="Twitter"><i data-feather="twitter"></i></a><a href="https://www.linkedin.com/in/eugene-pilyankevich-59a31655" title="LinkedIn"><i data-feather="linkedin"></i></a></ul>
+		</nav>
+	</div>
+
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Generic questions breed generic answers</h1>
+			<div class="meta">Jun 3, 2021
+			Tags: 
+			
+				
+								
+								#<a href="/tags/security">security</a>
+								
+								#<a href="/tags/musings">musings</a>
+								
+								#<a href="/tags/asymmetry-series">asymmetry-series</a>
+								
+				
+			
+		</div>
+		</div>
+
+		<div class="markdown">
+			<ul>
+<li>&ldquo;Should I use TLS for HIPAA compliance?”</li>
+<li>“Is self-signed certificate OK for mutual TLS authentication?”</li>
+<li>“Can I work without a security policy but with awesome security engineers?”</li>
+<li>“Can I have PEP and PDP in the same component of my application?”</li>
+</ul>
+<p>Mmm, maybe… Hell yeah! Sure you can! Oh, no! Avoid at all costs!</p>
+<p>I’m tired, can I go now?</p>
+<p>Without a certain level of precision and context in communication, there are very few mutually understandable reference points between people who build and people who protect.</p>
+<p>When software engineers ask for security advice, they build their language around one set of fitness criteria: “will it work?”, “will it meet pre-determined requirements?”. And in normal software engineering most of the fitness criteria are easy to assess and validate. In security, <a href="/posts/less-obvious-asymmetries/" title="it is not so easy">it is not so easy</a>.</p>
+<p>When security engineers provide advice and recommendations to software engineers - they have 2 choices:</p>
+<ol>
+<li>Honest attempt to be exact, which turns out to be overly tedious and annoying half of the time, because another half it is just impossible and security advice turns into</li>
+<li>A set of boilerplate answers, because it is very hard to give a specific answer without having a lot of input.</li>
+</ol>
+<p>This brings the value of the conversation to zero, and everyone wants to go home.</p>
+<p>When software engineers end up complaining how anal, annoying and bureaucratic some of the security engineers can be (in addition to all other fine traits infosec people possess), I see a few problems:</p>
+<ul>
+<li><strong>Expectations</strong> for an easy, out-of-context question to have easy answer that will work.</li>
+<li><strong>Language</strong> used to communicate questions and answers.</li>
+</ul>
+<p>We can&rsquo;t fix the expectations problem easily, because everyone wants to work less, party more and retire early for writing javascript spaghetti code codifying dynamic discounts on latte, while security is hard, laborious and brings little direct business value.</p>
+<p>But with some work, we can fix at least the language and mental models to some extent. And, as some wise dead people believed, language creates reality.</p>
+
+
+
+
+
+			
+			<hr>
+			<div class="row">
+  				<div class="column"><p> ← <b>Previous</b><br/><a href="https://ivychapel.ink/posts/on-time/">2021-05-03: On shortness of time</a>  </p></div>
+  				<div class="column"><p><b>Next → </b><br><a href="https://ivychapel.ink/posts/guessing-apple-csam-motivations/">2021-08-08: Guessing Apple&#39;s CSAM motivations</a> </p></div>
+			</div>
+
+
+			
+		</div>
+
+
+
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>You have reached the end of this page, so why don't you head back <a href="/">home</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

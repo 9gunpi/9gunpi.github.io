@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Less obvious parts of security asymmetries - ivychapel.ink</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Less obvious parts of security asymmetries" />
+<meta property="og:description" content="If you’ve been around infosec industry for a while, you might be familiar with an old adage:
+ defender has to get most (if not all) things right to meet his goals, while attacker has to get a few things right and he wins.
+ This is unfair, but the closer you look, the more asymmetries unfold: for example, what exactly does “get things right” mean? It&rsquo;s an interesting mental exercise, so let’s do it together." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ivychapel.ink/posts/less-obvious-asymmetries/" />
+<meta property="article:published_time" content="2021-02-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-22T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Less obvious parts of security asymmetries"/>
+<meta name="twitter:description" content="If you’ve been around infosec industry for a while, you might be familiar with an old adage:
+ defender has to get most (if not all) things right to meet his goals, while attacker has to get a few things right and he wins.
+ This is unfair, but the closer you look, the more asymmetries unfold: for example, what exactly does “get things right” mean? It&rsquo;s an interesting mental exercise, so let’s do it together."/>
+<link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script type="text/javascript">
+	  var _paq = window._paq || [];
+	   
+	  _paq.push(['trackPageView']);
+	  _paq.push(['enableLinkTracking']);
+	  (function() {
+	    var u="//pwk.cossacklabs.com/";
+	    _paq.push(['setTrackerUrl', u+'matomo.php']);
+	    _paq.push(['setSiteId', '6']);
+	    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+	    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+	  })();
+	</script>
+	
+	<script src="/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title">ivychapel.ink</h1>
+	<div class="site-description"><ul class="flat">
+			
+			<li>
+				<strong style="font-weight:300">~/</strong><a href="/posts">posts</a>
+			</li>
+			
+			<li>
+				<strong style="font-weight:300">~/</strong><a href="/tags">topics</a>
+			</li>
+			
+			<li>
+				<strong style="font-weight:300">~/</strong><a href="/about">about</a>
+			</li>
+			
+		</ul>
+		<nav class="nav social">
+			<ul class="flat"><a href="https://twitter.com/9gunpi" title="Twitter"><i data-feather="twitter"></i></a><a href="https://www.linkedin.com/in/eugene-pilyankevich-59a31655" title="LinkedIn"><i data-feather="linkedin"></i></a></ul>
+		</nav>
+	</div>
+
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Less obvious parts of security asymmetries</h1>
+			<div class="meta">Feb 22, 2021
+			Tags: 
+			
+				
+								
+								#<a href="/tags/security">security</a>
+								
+								#<a href="/tags/musings">musings</a>
+								
+								#<a href="/tags/asymmetry-series">asymmetry-series</a>
+								
+				
+			
+		</div>
+		</div>
+
+		<div class="markdown">
+			<p>If you’ve been around infosec industry for a while, you might be familiar with an old adage:</p>
+<blockquote>
+<p>defender has to get most (if not all) things right to meet his goals, while attacker has to get a few things right and he wins.</p>
+</blockquote>
+<p>This is unfair, but the closer you look, the more asymmetries unfold: for example, what exactly does “get things right” mean? It&rsquo;s an interesting mental exercise, so let’s do it together.</p>
+<p>When we discuss “setting things up properly” and “getting things right” in a security context, we lack a proper “definition of done” for large-scale security systems and their subcomponents (security controls). Mostly because our decisions are betting against unknown unknowns. We go all the way to turn them into known unknowns by addressing two extremes of the spectrum and filling space in-between: from external risk to internal posture.</p>
+<ul>
+<li><strong>Moving from the outside</strong>, we analyse known threats and think of our ways to protect against them.</li>
+<li><strong>Moving from the inside</strong>, we look at attack surface, failure scenarios and in best cases ponder “what will we do about it?” before picking applicable standard and set of best practices.</li>
+</ul>
+<p>Efforts meet somewhere in the middle, and if you’re doing it right - you already have a proper understanding of business risks related to security, made a set of risk management decisions, and are now staring at long lists of “do this and do that” coming from compliance requirements and best industry standards mapped onto your unique architecture and set of constraints.</p>
+<p>Unfortunately it does not lead you to a definite answer - “did I get things right”? Security failures after humongous budgets spent on security hint us that getting things right is either very hard or totally impossible.</p>
+<h2 id="vague-definition-of-done">Vague Definition of Done.</h2>
+<p>I think the idea that “getting things right is very hard” has something to do with our ability to reason about “utility” in terms of risk-preventing constructions - cryptographic protocols, firewalls, source code analysers, whatever else.</p>
+<p>“Utility” can be presented as 3 part system:</p>
+<ul>
+<li><strong>Claim</strong>: Utility can be expressed as a claim (“it will do X, and X represents utility satisfactorily”)</li>
+<li><strong>Conditions</strong>: For the claim, there exists conditional proof (“it does X under conditions Y1..Yn)</li>
+<li><strong>Falsifiability</strong>: Utility claim can be falsified (“I can make it not do X”)</li>
+</ul>
+<p><strong>Disclaimer</strong>: This is simplified way to think about it, but its simplified for a reason:</p>
+<ul>
+<li>We don’t get much out of <em>argumentum ad verecundiam</em>_ here - our “utility” includes dozens of moving parts, and the fact that some of them can be argued back to universally accepted opinions and proofs doesn’t make the whole equally trustworthy. In other words, being able to reduce some parts of <a href="https://www.schneier.com/tag/doghouse/">doghouse</a> cryptosystem to Shannon’s entropy model is not very helpful when you’re looking to use the cryptosystem to protect sensitive data against real adversary who did not read your whitepaper.</li>
+<li>We can’t get into <em>hard to vary</em> territory too much - while hard to vary explanations have better predictive power, decomposition of a large claim into smaller ones will lead to diverting attention about “utility” from general goal to specific attributes.</li>
+<li>So all we’re left with - some level of precision and reliance on <em>falsification principle</em>.</li>
+</ul>
+<p>To simplify, let’s look at a hierarchy of reasoning devices we use to think about “utility” in different contexts:</p>
+<ul>
+<li><strong>Obvious, directly measurable utility</strong>. Easy to define, easy to measure, easy to falsify claims of utility.</li>
+<li><strong>Indirectly measurable utility</strong>. Possible to define, possible to measure precisely, claims can be falsified immediately (rarely) or eventually (in most cases).</li>
+<li><strong>Inversely measurable utility</strong>. The utility that can only be measured by absence of events that falsify it - you can test some, but still there are cases where only real-world failure falsifies the system’s utility.</li>
+</ul>
+<p>The intuitive “utility” is straightforward: we have a problem, we seek a solution, and we can intuitively measure whether the problem was solved. The intuitive utility is very handy when you’ve invented the first car in the land where cars have previously never been used. It drives, you say, <strong>vroom</strong> it does, and everybody claps (but some shrivel in fear). It quickly gets messy - implicit in car’s general utility, what matters is driving safety, ability to <a href="https://arstechnica.com/cars/2020/02/driver-stranded-after-connected-rental-car-cant-call-home/">start a car in the mountains without internet coverage</a>.</p>
+<p>To avoid biasing you into additional naive heuristics, I leave those cars (an exciting invention) aside and take the boring and un-intuitive illustration instead: bare bones, naive loan management system for a tiny bank.</p>
+<h3 id="1-directly-measurable-utility">1. Directly measurable utility</h3>
+<p>For some technological solutions it is easy to reason about their utility.</p>
+<p>Suppose you come up with a software that does one thing - “stops old honest jobless ex-criminals from getting bank loans”. Software blinks red light in loan inspector’s office every time bank loan application contains combination of:</p>
+<ul>
+<li>age range</li>
+<li>absence of full-time job</li>
+<li>checked “have you been to jail” item in the survey</li>
+</ul>
+<p>Very good, we’ve designed a simple stop-factor system. We can instantly falsify its utility if it&rsquo;s not good, we can prove that it’s good (because all of the conditions boil down to а process of matching application lines against chosen criteria). By operating our stop-factor application analysis software solution for some time, we realise there are a bunch of problems:</p>
+<ul>
+<li><strong>Honesty</strong>: some people’s moral standards allow them to cheat in loan applications.</li>
+<li><strong>Unfair conditions</strong>: without discussing what fairness means in retail banking, some might consider your approach unfair and discriminating to certain social group and designed directly to ward them off.</li>
+<li><strong>Poor conditions that don’t cover edge cases</strong>: if someone goes out of jail in old age because he was falsely convicted, and then compensated by the government for miscarriage of justice, and is trying to get a mobile phone loan, you’re loosing important customer.</li>
+</ul>
+<p>Most consumer-facing inventions like cars, touch-screen mobile phones and levitating hoverboards have intuitively understandable (and provable/falsifiable) utility. Problems start when we treat more complex systems with the same heuristics.</p>
+<h3 id="2-indirectly-measurable-utility">2. Indirectly measurable utility</h3>
+<p>Now your banking software strives to make a quantum leap, and so does its utility.</p>
+<p>You promise to deliver software that:</p>
+<blockquote>
+<p>“allows qualified risk manager to build a system that stops most individual fraudsters and unwanted customers while covering most edge-cases and making it look fair”,</p>
+</blockquote>
+<p>which is a sum of smaller ones:</p>
+<ul>
+<li>It should prevent definitely bad people from getting loans whatsoever by using fine-grained stop factors.</li>
+<li>It should cross-check different rules between themselves for common fraud patterns.</li>
+<li>It should rely on external data (credit history bureau, criminal background checks) to validate claims against dishonest applicants.</li>
+<li>It should be able to take additional evidence from human operator.</li>
+<li>It should give out confidence score, and, based on current configuration, either accept, deny or request human operator to cast an eye on it, providing opportunity for fair trial if the rules turn out to be inhuman.</li>
+</ul>
+<p>Sounds easy, eh?</p>
+<p>You can emulate all the factors and verification procedures with a certain degree of accuracy as you develop your solution.</p>
+<p>But to actually prove that your solution does what it claims, customers have to use it for some time. Customer has to collect the data on decision efficiency (number of people that default or delay payment), but it is already hazy enough: the system depends on “qualified risk manager on the customer&rsquo;s side&rdquo; entity. Now that &ldquo;is it good enough&rdquo; is co-owned and relies on many factors, testing a happy path of out-of-the-box soluution and illustrating it with 20 scenarios doesn’t prove anything.</p>
+<p>Many systems fall into this type of utility. Even some of the security controls fall into this area. But most don’t, because their utility is defined by negative, inverse scenarios.</p>
+<h3 id="3-inversely-measurable-utility">3. Inversely measurable utility</h3>
+<p>Now imagine your system makes next quantum leap, or a few, in its utility claims:</p>
+<blockquote>
+<p>Your system “stops most individual fraudsters and unwanted customers with efficient ML system, cheaper than human-assisted system, and with less insider risk”.</p>
+</blockquote>
+<p>How would you falsify it? You can try to do it in several ways.</p>
+<ul>
+<li>You can design an adversarial input generation system that will try to make ML part fail miserably. Sounds like a security testing during development, right?</li>
+<li>Or you can hire experienced credit/loan consultants who will observe the system, try to predict failures, then try to actually trick the system based on observed pattern. Sounds like pen-testing a bit, innit?</li>
+</ul>
+<p>You can do both and still, in a year, someone will find a way to trick your system and all you will see is half of your portfolio suddenly defaults.</p>
+<p>Thus, you don’t really get to reason about utility before it actually fails.</p>
+<p>That is why your sales pitch for the software turns into “this product stops most individual fraudsters we can think of and unwanted customers with efficient ML-system, cheaper than human-assisted system in most cases and effective against most risks we currently understand and can model”. That’s a poor sales pitch for The Ultimate Loan Fraud Detection system, right?</p>
+<p>So, most of the time you try to mask utility as the first two types of utility with clever wording and working around expectations to push new technology forward or try to solve a problem in a novel way.</p>
+<p>Fine, but the claims get less and less falsifiable, responsibility lines are blurred, and the end-result is “we’ve done some work but we’re not sure if it’s good against a skilled adversary”.</p>
+<h2 id="the-problem-with-reasoning">The problem with reasoning</h2>
+<p>Unfortunately, many security systems fall into described pattern - we’re thousands of years of experience in hands-on practice, but very limited in theory and scientific approach so far. When new ciphers, new firewall designs, access control systems are built, we can reject already known “bad patterns definitely known to fail”, but that’s it.</p>
+<p>Falsification is hard, as we saw. But the rest is even harder - try to map argument to authority to reasoning above without falling into synonymous fallacy? Decomposing into statements that can be argued back to proven principles is hard already, but having tight, hard to vary decomposition is even harder and we’re yet to see how it includes unknown unknowns.</p>
+<p>We’ve not good at it, but we’re very good at spitting intuitive heuristics and being content with it.</p>
+<p>We’re facing the universe of unknown unknown risks, and we’re only sure that under certain conditions our system will not fail. Most likely. If basic assumptions are not refuted and a whole new class of computers makes trapdoor functions more penetrable than we’ve previously thought.</p>
+<blockquote>
+<p>This is exactly the case with security of general purpose post-quantum homomorphic cryptography protecting your database and letting your AI search it on blockchain. In a zero-trust environment, of course.</p>
+</blockquote>
+<p>When we try to reason about “did we get this control right”, we typically ascend over the ladder of “utility” representations I’ve suggested above - building a very detailed understanding of conditions and outcomes without being able to validate them in intuitively easy ways, and knowing that any utility you define is relative.</p>
+<p>Because there will be unknown unknowns in a world full of threats, and there will be hard-to-falsify utility attributes of your security measures.</p>
+<p>Being a security practitioner rather than a scientist, my dream development is more in the field of formal models and formal verification, no matter how funny they look now.  But without them, we’re doomed to function in the world of “too much maybe”. And that is maybe too ambiguous to devise security investments without hand-waving and FUD.</p>
+<p>But, maybe, I’m wrong and there is an easy way to falsify this train of thought as well?</p>
+
+
+
+
+
+			
+			<hr>
+			<div class="row">
+  				<div class="column"><p> ← <b>Previous</b><br/><a href="https://ivychapel.ink/posts/unblocking-the-writers-block/">2021-01-19: Unblocking the writer&#39;s block</a>  </p></div>
+  				<div class="column"><p><b>Next → </b><br><a href="https://ivychapel.ink/posts/on-time/">2021-05-03: On shortness of time</a> </p></div>
+			</div>
+
+
+			
+		</div>
+
+
+
+
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>You have reached the end of this page, so why don't you head back <a href="/">home</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>security on ivychapel.ink</title>
+    <link>https://ivychapel.ink/tags/security/</link>
+    <description>Recent content in security on ivychapel.ink</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Aug 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ivychapel.ink/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Guessing Apple&#39;s CSAM motivations</title>
+      <link>https://ivychapel.ink/posts/guessing-apple-csam-motivations/</link>
+      <pubDate>Sun, 08 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivychapel.ink/posts/guessing-apple-csam-motivations/</guid>
+      <description>With all gloom&amp;rsquo;n&amp;rsquo;doom scenarios about CSAM misuse have been pointed out and outrage about change in value proposition is heating up, I am missing one interesting angle in the Apple CSAM discussion:
+ Implementation of any security control/technology is an exercise in security budget allocation. What is the expected change in security posture/risk resistance and how much it will cost? Are there more important risks we can address with equal budget?</description>
+    </item>
+    
+    <item>
+      <title>Generic questions breed generic answers</title>
+      <link>https://ivychapel.ink/posts/generic-questions-breed-generic-answers/</link>
+      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivychapel.ink/posts/generic-questions-breed-generic-answers/</guid>
+      <description>&amp;ldquo;Should I use TLS for HIPAA compliance?” “Is self-signed certificate OK for mutual TLS authentication?” “Can I work without a security policy but with awesome security engineers?” “Can I have PEP and PDP in the same component of my application?”  Mmm, maybe… Hell yeah! Sure you can! Oh, no! Avoid at all costs!
+I’m tired, can I go now?
+Without a certain level of precision and context in communication, there are very few mutually understandable reference points between people who build and people who protect.</description>
+    </item>
+    
+    <item>
+      <title>Less obvious parts of security asymmetries</title>
+      <link>https://ivychapel.ink/posts/less-obvious-asymmetries/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivychapel.ink/posts/less-obvious-asymmetries/</guid>
+      <description>If you’ve been around infosec industry for a while, you might be familiar with an old adage:
+ defender has to get most (if not all) things right to meet his goals, while attacker has to get a few things right and he wins.
+ This is unfair, but the closer you look, the more asymmetries unfold: for example, what exactly does “get things right” mean? It&amp;rsquo;s an interesting mental exercise, so let’s do it together.</description>
+    </item>
+    
+    <item>
+      <title>On avoiding band-aid security</title>
+      <link>https://ivychapel.ink/posts/on-avoiding-band-aid-security/</link>
+      <pubDate>Wed, 30 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivychapel.ink/posts/on-avoiding-band-aid-security/</guid>
+      <description>Applying band-aid to open wounds is an important step in preventing further infection, yet it rarely addresses the underlying issue.
+Some of my work duties as an executive in a security products companyis helping key customers better understand the security challenges they’re going through, and shape the vision for future improvements.
+The other day I was talking to a customer, and a familiar narrative surfaced:
+ “We’ve had a pentest from company X, we’ve covered 100% of detected weaknesses, devised long-term security improvement program based on their recommendations, yet, a year after that, we’ve had 2 incidents.</description>
+    </item>
+    
+    <item>
+      <title>On keeping secrets in comfort</title>
+      <link>https://ivychapel.ink/posts/on-keeping-secrets-in-comfort/</link>
+      <pubDate>Mon, 24 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivychapel.ink/posts/on-keeping-secrets-in-comfort/</guid>
+      <description>As someone who used to spend a lot of time analyzing how security incidents happen, I frequently think how little, unfortunately, technical peculiarities have to do with most security breaches.
+ Making people keep secrets is very hard. Making groups follow guidelines is laborious. Making secrecy policies work in groups is even harder.
+You can fail only once .
+ To prevent OPSEC failures, we’re constructing hi-tech clutches to human problems, frequently without trying to understand the nature of the problem.</description>
+    </item>
+    
+  </channel>
+</rss>
