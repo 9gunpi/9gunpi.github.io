@@ -6,7 +6,7 @@
     <description>Recent content in musings on ivychapel.ink</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Dec 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ivychapel.ink/tags/musings/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Log4j and sudden glimpse of security awareness.</title>
       <link>https://ivychapel.ink/posts/log4j/</link>
-      <pubDate>Sun, 12 Dec 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ivychapel.ink/posts/log4j/</guid>
       <description>As any proper security panic, Log4j made everyone think of many things. Open-source economics, supply chain risks, interconnected risk bearing&amp;hellip; kk.org&amp;rsquo;s Kevin Kelly wrote a blog post that brings up the sentiment of &amp;ldquo;enabling baseline via regulating everyone&amp;rdquo;, again:
