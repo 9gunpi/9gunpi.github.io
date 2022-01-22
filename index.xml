@@ -6,10 +6,20 @@
     <description>Recent content on ivychapel.ink</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Jan 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ivychapel.ink/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cybersecurity degrees</title>
+      <link>https://ivychapel.ink/posts/cybersecurity-degrees/</link>
+      <pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivychapel.ink/posts/cybersecurity-degrees/</guid>
+      <description>I see many conversations around cybersecurity education, requirements to find work and gatekeeping. While I&amp;rsquo;ve got a lot to say about it, getting into them would me mildly unproductive, especially in environments crafted for argument, not finding new meanings and consensus. But this conversation got me on it again: https://twitter.com/kylieengineer/status/1482485311158779905, so I&amp;rsquo;d sketch something here. Perhaps, this will be continued in the future.
+This particular example is “learning to fit into current security needs” vs “learning XX fundamentals” (CS, infra, risk, whatever).</description>
+    </item>
     
     <item>
       <title>Log4j and sudden glimpse of security awareness.</title>
@@ -17,9 +27,9 @@
       <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ivychapel.ink/posts/log4j/</guid>
-      <description>As any proper security panic, Log4j made everyone think of many things. Open-source economics, supply chain risks, interconnected risk bearing&amp;hellip; kk.org&amp;rsquo;s Kevin Kelly wrote a blog post that brings up the sentiment of &amp;ldquo;enabling baseline via regulating everyone&amp;rdquo;, again:
+      <description>As any proper security panic, Log4j made everyone think of many things. Open-source economics, supply chain risks, interconnected risk bearing&amp;hellip; kk.org&amp;rsquo;s Kevin Kelly wrote a blog post that echoes point we&amp;rsquo;re hearing a lot from senior folk:
 https://kk.org/thetechnium/your-security-is-my-security/
-KK’s take on the problem? “We have to regulate security baseline by regulating each and every device that gets online”. Although not campaigning for serious standardisation and regulation, it&amp;rsquo;s still a strong take.</description>
+“We have to regulate security baseline by regulating each and every device that gets online”. Although not campaigning for certain specific kind of standardisation and regulation, it&amp;rsquo;s still a strong take. And since it&amp;rsquo;s well written, it&amp;rsquo;s interesting to argue against.</description>
     </item>
     
     <item>

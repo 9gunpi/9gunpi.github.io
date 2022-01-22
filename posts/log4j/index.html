@@ -4,18 +4,18 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Log4j and sudden glimpse of security awareness. - ivychapel.ink</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta property="og:title" content="Log4j and sudden glimpse of security awareness." />
-<meta property="og:description" content="As any proper security panic, Log4j made everyone think of many things. Open-source economics, supply chain risks, interconnected risk bearing&hellip; kk.org&rsquo;s Kevin Kelly wrote a blog post that brings up the sentiment of &ldquo;enabling baseline via regulating everyone&rdquo;, again:
+<meta property="og:description" content="As any proper security panic, Log4j made everyone think of many things. Open-source economics, supply chain risks, interconnected risk bearing&hellip; kk.org&rsquo;s Kevin Kelly wrote a blog post that echoes point we&rsquo;re hearing a lot from senior folk:
 https://kk.org/thetechnium/your-security-is-my-security/
-KK’s take on the problem? “We have to regulate security baseline by regulating each and every device that gets online”. Although not campaigning for serious standardisation and regulation, it&rsquo;s still a strong take." />
+“We have to regulate security baseline by regulating each and every device that gets online”. Although not campaigning for certain specific kind of standardisation and regulation, it&rsquo;s still a strong take. And since it&rsquo;s well written, it&rsquo;s interesting to argue against." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ivychapel.ink/posts/log4j/" />
 <meta property="article:published_time" content="2021-12-13T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-12-13T00:00:00+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Log4j and sudden glimpse of security awareness."/>
-<meta name="twitter:description" content="As any proper security panic, Log4j made everyone think of many things. Open-source economics, supply chain risks, interconnected risk bearing&hellip; kk.org&rsquo;s Kevin Kelly wrote a blog post that brings up the sentiment of &ldquo;enabling baseline via regulating everyone&rdquo;, again:
+<meta name="twitter:description" content="As any proper security panic, Log4j made everyone think of many things. Open-source economics, supply chain risks, interconnected risk bearing&hellip; kk.org&rsquo;s Kevin Kelly wrote a blog post that echoes point we&rsquo;re hearing a lot from senior folk:
 https://kk.org/thetechnium/your-security-is-my-security/
-KK’s take on the problem? “We have to regulate security baseline by regulating each and every device that gets online”. Although not campaigning for serious standardisation and regulation, it&rsquo;s still a strong take."/>
+“We have to regulate security baseline by regulating each and every device that gets online”. Although not campaigning for certain specific kind of standardisation and regulation, it&rsquo;s still a strong take. And since it&rsquo;s well written, it&rsquo;s interesting to argue against."/>
 <link rel="stylesheet" type="text/css" media="screen" href="/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" /><script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 	<script type="text/javascript">
@@ -79,16 +79,16 @@ KK’s take on the problem? “We have to regulate security baseline by regulati
 		</div>
 
 		<div class="markdown">
-			<p>As any proper security panic, Log4j made everyone think of many things. Open-source economics, supply chain risks, interconnected risk bearing&hellip; kk.org&rsquo;s Kevin Kelly wrote a blog post that brings up the sentiment of &ldquo;enabling baseline via regulating everyone&rdquo;, again:</p>
+			<p>As any proper security panic, Log4j made everyone think of many things. Open-source economics, supply chain risks, interconnected risk bearing&hellip; kk.org&rsquo;s Kevin Kelly wrote a blog post that echoes point we&rsquo;re hearing a lot from senior folk:</p>
 <p><a href="https://kk.org/thetechnium/your-security-is-my-security/">https://kk.org/thetechnium/your-security-is-my-security/</a></p>
-<p>KK’s take on the problem? “We have to regulate security baseline by regulating each and every device that gets online”. Although not campaigning for serious standardisation and regulation, it&rsquo;s still a strong take. And since it&rsquo;s well written, it&rsquo;s interesting to argue against. Read it first, KK is an awesome writer first of all.</p>
+<p>“We have to regulate security baseline by regulating each and every device that gets online”. Although not campaigning for certain specific kind of standardisation and regulation, it&rsquo;s still a strong take. And since it&rsquo;s well written, it&rsquo;s interesting to argue against. Read it, KK is an awesome writer to sart with.</p>
 <p>The point that struck me is:</p>
 <blockquote>
 <p>“In effect we would treat a security break like a public health breach. Until you can upgrade your devices to the minimum required standard of security, you are quarantined.”</p>
 </blockquote>
 <p>… and it hits the right spot, although from the wrong direction.</p>
 <p>I wanted to rant on COVID protocol compliance, but that’s a complicated and charged topic for 2021, so I’ll salt it until dust settles (2025?).</p>
-<p>So let’s take a simpler example to discuss: drunk driving. We’ve got a “minimum required security standard” that implies that every driver can be held accountable for their actions. Yet in US, 28 people a day die in DUI crashes (<a href="https://www.nhtsa.gov/risky-driving/drunk-driving#:~:text=Every%20day%2C%20about%2028%20people,These%20deaths%20were%20all%20preventable.">Drunk Driving | NHTSA</a>). This is intentional misbehaviour only. Think of people on the road with sight problems, sleep fatigue and other causes for loss of driver control. They all sum up as “you should not be driving but here you are”.</p>
+<p>So let’s take a simpler example in public health to discuss: drunk driving. We’ve got a “minimum required security standard” that implies that every driver can be held accountable for their actions. Yet in US, 28 people a day die in DUI crashes (<a href="https://www.nhtsa.gov/risky-driving/drunk-driving#:~:text=Every%20day%2C%20about%2028%20people,These%20deaths%20were%20all%20preventable.">Drunk Driving | NHTSA</a>). This is intentional misbehaviour only. Think of people on the road with sight problems, sleep fatigue and other causes for loss of driver control. They all sum up as “you should not be driving but here you are”.</p>
 <p>Talking about information security in the interconnected society, there are a few problems with mandating security baseline from everyone:</p>
 <ul>
 <li>Incentives are misaligned: There is no good single short-term incentive to invest into a security baseline that works well for everyone. Quite the opposite, the current climate incentivizes broken software in a way. It&rsquo;s always more important to ship it then to ship it risk free.</li>
@@ -114,7 +114,7 @@ KK’s take on the problem? “We have to regulate security baseline by regulati
 			<hr>
 			<div class="row">
   				<div class="column"><p> ← <b>Previous</b><br/><a href="https://ivychapel.ink/posts/guessing-apple-csam-motivations/">2021-08-08: Guessing Apple&#39;s CSAM motivations</a>  </p></div>
-  				<div class="column"><p></p></div>
+  				<div class="column"><p><b>Next → </b><br><a href="https://ivychapel.ink/posts/cybersecurity-degrees/">2022-01-22: Cybersecurity degrees</a> </p></div>
 			</div>
 
 
