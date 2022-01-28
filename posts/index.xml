@@ -6,10 +6,21 @@
     <description>Recent content in Posts on ivychapel.ink</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ivychapel.ink/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The dark side of institutional death</title>
+      <link>https://ivychapel.ink/posts/inefficient-equilibriums/</link>
+      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivychapel.ink/posts/inefficient-equilibriums/</guid>
+      <description>In thinking about asymmetry in security engineering versus regular software engineering, there&amp;rsquo;s one thing I bump into over and over again.
+Standards and progressing the security baseline via standards. Every standard is an equilibrium of different requirements against functional goals of thing being standardized. Here&amp;rsquo;s a good post that points out how, frequently, inefficient equilibriums in standards are outdated:
+ Institutional death, autophagia, institutional senescence (https://250bpm.com/blog:160/) allows us to default on inefficient equilibriums and unblock moving forward.</description>
+    </item>
     
     <item>
       <title>Cybersecurity degrees</title>

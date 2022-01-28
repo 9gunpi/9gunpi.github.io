@@ -6,10 +6,37 @@
     <description>Recent content in Tags on ivychapel.ink</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 28 Jan 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ivychapel.ink/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>asymmetry-series</title>
+      <link>https://ivychapel.ink/tags/asymmetry-series/</link>
+      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivychapel.ink/tags/asymmetry-series/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>musings</title>
+      <link>https://ivychapel.ink/tags/musings/</link>
+      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivychapel.ink/tags/musings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://ivychapel.ink/tags/security/</link>
+      <pubDate>Fri, 28 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivychapel.ink/tags/security/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>getting-into-infosec</title>
@@ -21,38 +48,11 @@
     </item>
     
     <item>
-      <title>security</title>
-      <link>https://ivychapel.ink/tags/security/</link>
-      <pubDate>Sat, 22 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivychapel.ink/tags/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>musings</title>
-      <link>https://ivychapel.ink/tags/musings/</link>
-      <pubDate>Mon, 13 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivychapel.ink/tags/musings/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>surveillance</title>
       <link>https://ivychapel.ink/tags/surveillance/</link>
       <pubDate>Sun, 08 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://ivychapel.ink/tags/surveillance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>asymmetry-series</title>
-      <link>https://ivychapel.ink/tags/asymmetry-series/</link>
-      <pubDate>Thu, 03 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivychapel.ink/tags/asymmetry-series/</guid>
       <description></description>
     </item>
     
